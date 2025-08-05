@@ -1,0 +1,46 @@
+:root {
+    --font-accent-color: #F54932;
+    --font-primary-color: #313131;
+    --font-white-color: #FFFFFF;
+    --font-header-color: #595653;
+    --font-button: #1F1F1F;
+    --button-stroke: #000000;
+  
+    --red-background: #F54932;
+    --dark-background: #1F1F1F;
+    --yellow-background: #FBCE51;
+    --beige-background: #E9DED4;
+    --white-background: #FFFFFF;
+  
+    --mobile: 375px;
+    --tablet: 768px;
+    --desktop: 1366px;
+    --large: 1920px;
+  
+    --container-mobile: 335px;
+    --container-desktop: 1222px;
+  
+    --padding-mobile: 18px 20px 40px 20px;
+    --padding-desktop: 26px 72px 62px 72px;
+  
+    --font-primary: 'Golos Text', sans-serif;
+    --font-secondary: 'Merriweather', serif;
+  }
+  
+  /* CSS Grid */
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+  
+  /* Flexbox */
+  .flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  
+  /* Container Queries */
+  @container (min-width: 768px) {
+    .card { font-size: 1.2rem; }
+  }
