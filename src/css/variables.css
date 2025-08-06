@@ -27,20 +27,13 @@
     --font-secondary: 'Merriweather', serif;
   }
   
-  /* CSS Grid */
   .grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
   
-  /* Flexbox */
   .flex {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
-  
-  /* Container Queries */
-  @container (min-width: 768px) {
-    .card { font-size: 1.2rem; }
   }

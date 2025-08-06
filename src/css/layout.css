@@ -1,0 +1,26 @@
+.container {
+    width: 100%;
+    max-width: var(--container-mobile);
+    /* margin-left: 20px; */
+  }
+
+  .section {
+    margin: var(--padding-mobile);
+  }
+  
+  @media (min-width: 768px) {
+    .container {
+      max-width: var(--container-desktop);
+      margin-left: 72px;
+    }
+
+    .section {
+      margin: var(--padding-desktop);
+    }
+  }
+
+  @media (max-width: 769px) {
+    .container {
+      margin: 0 auto;
+    }
+  }

@@ -6,6 +6,7 @@
 @import url('./components/ticker.css');
 @import url('./components/header.css');
 @import url('./components/hero.css');
+@import url('./components/about.css');
 
 body {
   min-height: 100vh;
@@ -17,3 +18,9 @@ body {
 main {
   flex: 1;
 }
+
+.main-content {
+    position: relative;
+    z-index: 1;
+    background-color: var(--white-background);
+  }
