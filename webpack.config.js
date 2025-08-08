@@ -15,7 +15,7 @@ module.exports = {
   output: {
     filename: '[name].[contenthash].js',
     path: path.resolve(__dirname, 'build'),
-    publicPath: isDev ? '/' : './',
+    publicPath: isDev ? '/' : '/chess-landing/',
     clean: true,
   },
   resolve: {
