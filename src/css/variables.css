@@ -1,5 +1,6 @@
 :root {
     --font-accent-color: #F54932;
+    --font-accent-blue: #3057A2;
     --font-primary-color: #313131;
     --font-white-color: #FFFFFF;
     --font-header-color: #595653;
@@ -11,6 +12,8 @@
     --yellow-background: #FBCE51;
     --beige-background: #E9DED4;
     --white-background: #FFFFFF;
+
+    --divider-line-color: #D0D0D0;
   
     --mobile: 375px;
     --tablet: 768px;
