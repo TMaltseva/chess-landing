@@ -441,8 +441,8 @@ ul, ol {
   .hero {
     position: relative;
     display: flex;
-    min-height: calc(100vh - 90px);
-    min-height: calc(100svh - 90px);
+    min-height: 100vh;
+    min-height: 100svh;
   }
 
   .hero > .ticker {
@@ -579,7 +579,8 @@ ul, ol {
         position: absolute;
         top: 270px;
         right: 0;
-        height: 410px;
+        height: 100vh;
+        height: 100svh;
         background-image: url(/chess-landing/assets/images/hero-composition-mobile.defaeb2fcf2ca6d822a9.png);
         background-position: inherit;
       }
@@ -644,7 +645,7 @@ ul, ol {
   .about {
     background-color: var(--white-background);
     padding: 0 20px;
-    padding-top: 80px;
+    padding-top: 48px;
     position: relative;
     z-index: 1;
     margin-bottom: 34px;
@@ -710,8 +711,8 @@ ul, ol {
   
   .about__visual {
     width: 335px;
-    height: 402px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     transition: transform 0.3s ease;
     opacity: 1;
     order: 2;
@@ -734,6 +735,7 @@ ul, ol {
   
   @media (min-width: 768px) {
     .about {
+      padding-top: 80px;
       padding-left: 36px;
       padding-right: 36px;
       margin-bottom: 64px;
@@ -779,6 +781,7 @@ ul, ol {
     }
   
     .about__visual {
+      object-fit: cover;
       grid-area: image;
       width: 394px;
       height: 250px;
@@ -876,7 +879,7 @@ ul, ol {
   }
   
   .tournament__image img {
-    width: 100%;
+    width: 105%;
     height: auto;
     object-fit: cover;
     display: block;
@@ -1135,7 +1138,7 @@ ul, ol {
   
   @media (min-width: 1366px) {
     .tournament {
-      padding: 0 72px 140px 72px;
+      padding: 0 72px 200px 72px;
     }
 
     .tournament__info {
@@ -1502,11 +1505,11 @@ ul, ol {
 
 @media (min-width: 1366px) {
     .steps {
-        padding: 80px 72px;
+        padding: 0 72px 80px;
     }
 
     .steps__header {
-        margin-bottom: 40px;
+        margin-bottom: 54px;
     }
 
     .steps__title-row--last {
@@ -1806,6 +1809,20 @@ main {
   position: relative;
   z-index: 1;
   background-color: var(--white-background);
+}
+
+.break--mobile {
+  display: inline;
+}
+
+.break--desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .break--mobile {
+    display: none;
+  }
 }
 
 .pre-footer {
