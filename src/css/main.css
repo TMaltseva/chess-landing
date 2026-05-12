@@ -28,6 +28,24 @@ main {
   background-color: var(--white-background);
 }
 
+.break--mobile {
+  display: inline;
+}
+
+.break--desktop {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .break--mobile {
+    display: none;
+  }
+
+  .break--desktop {
+    display: inline;
+  }
+}
+
 .pre-footer {
   background-color: var(--white-background);
   padding-top: 100px;
