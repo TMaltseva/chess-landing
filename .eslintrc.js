@@ -30,11 +30,12 @@ module.exports = {
     'semi': ['error', 'always'],
     'quotes': ['error', 'single'],
     'indent': ['error', 2],
-    'max-len': ['error', { 
+    'max-len': ['error', {
       'code': 120,
       'ignoreUrls': true,
       'ignoreStrings': true,
       'ignoreTemplateLiterals': true,
     }],
+    'no-param-reassign': ['error', { props: false }],
   },
 };

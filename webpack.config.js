@@ -91,14 +91,21 @@ module.exports = {
         test: /\.(png|jpg|jpeg|gif|svg)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/images/[name].[hash][ext]',
+          filename: isDev ? 'assets/images/[name][ext]' : 'assets/images/[name].[hash][ext]',
+        },
+      },
+      {
+        test: /\.ico$/i,
+        type: 'asset/resource',
+        generator: {
+          filename: 'assets/icons/[name][ext]',
         },
       },
       {
         test: /\.(woff|woff2|eot|ttf|otf)$/i,
         type: 'asset/resource',
         generator: {
-          filename: 'assets/fonts/[name].[hash][ext]',
+          filename: isDev ? 'assets/fonts/[name][ext]' : 'assets/fonts/[name].[hash][ext]',
         },
       },
     ],
