@@ -1,0 +1,243 @@
+.players {
+    background-color: var(--white-background);
+    padding: 60px 0 0;
+}
+
+.players__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.players__title {
+    font-family: var(--font-secondary);
+    font-weight: 400;
+    font-size: 36px;
+    line-height: 120%;
+    color: var(--font-primary-color);
+    text-transform: uppercase;
+}
+
+.players__nav {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.players__nav--header {
+    display: none;
+}
+
+.players__nav--mobile {
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.players__nav-btn {
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    background-color: var(--font-primary-color);
+    -webkit-mask-image: url('../../assets/images/carousel-button.png');
+    mask-image: url('../../assets/images/carousel-button.png');
+    -webkit-mask-size: 100% 100%;
+    mask-size: 100% 100%;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.players__nav-btn:disabled {
+    cursor: default;
+    background-color: #D6D6D6;
+}
+
+.players__nav-btn:not(:disabled):hover {
+    background-color: var(--yellow-background);
+}
+
+.players__nav-icon {
+    width: 7px;
+    height: 14px;
+    object-fit: contain;
+    display: block;
+}
+
+.players__counter {
+    font-family: var(--font-primary);
+    font-size: 16px;
+    line-height: 120%;
+    color: #313131;
+    white-space: nowrap;
+}
+
+.players__counter-sep,
+.players__counter-total {
+    opacity: 0.6;
+}
+
+.players__counter-current {
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.players__slider {
+    overflow: hidden;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+}
+
+.players__track {
+    display: flex;
+    gap: 0;
+    transition: transform 0.35s ease;
+    will-change: transform;
+}
+
+.players__card {
+    flex: 0 0 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 12px;
+}
+
+.players__photo {
+    width: 244px;
+    height: 244px;
+    border-radius: 50%;
+    overflow: hidden;
+    background-color: var(--beige-background);
+    flex-shrink: 0;
+}
+
+.players__photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.players__name {
+    font-family: var(--font-primary);
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 120%;
+    color: var(--font-primary-color);
+}
+
+.players__role {
+    font-family: var(--font-primary);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 120%;
+    color: var(--font-header-color);
+}
+
+.players__card .btn--secondary {
+    width: 113px;
+    min-width: unset;
+    height: 35px;
+    padding: 0;
+    background-color: transparent;
+    color: #3057A2;
+    border: 1.5px solid #3057A2;
+    opacity: 1;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.players__card .btn--secondary::before {
+    display: none;
+}
+
+.players__card .btn--secondary:hover {
+    background-color: #3057A2;
+    color: #FFFFFF;
+}
+
+@media (min-width: 768px) {
+    .players {
+        padding: 60px 36px;
+    }
+
+    .players .container {
+        margin: 0 auto;
+    }
+
+    .players__slider {
+        width: auto;
+        margin-left: 0;
+    }
+
+    .players__title {
+        font-size: 54px;
+    }
+
+    .players__nav--header {
+        display: flex;
+    }
+
+    .players__nav--mobile {
+        display: none;
+    }
+
+    .players__nav-btn {
+        width: 44px;
+        height: 44px;
+    }
+
+    .players__track {
+        gap: 20px;
+    }
+
+    .players__card {
+        flex: 0 0 calc(33.333% - 14px);
+        gap: 0;
+    }
+
+    .players__card .players__name {
+        margin-top: 28px;
+    }
+
+    .players__card .players__role {
+        margin-top: 6px;
+    }
+
+    .players__card .btn--secondary {
+        margin-top: 20px;
+    }
+
+    .players__photo {
+        width: 320px;
+        height: 320px;
+    }
+}
+
+@media (min-width: 1366px) {
+    .players {
+        padding: 120px 72px 0;
+    }
+
+    .players__header {
+        margin-bottom: 60px;
+    }
+
+    .players__track {
+        gap: 24px;
+    }
+
+    .players__card {
+        flex: 0 0 calc(33.333% - 16px);
+    }
+
+    .players__nav-icon {
+        width: 14px;
+        height: 16px;
+        object-fit: contain;
+        display: block;
+    }
+}
