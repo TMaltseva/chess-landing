@@ -40,6 +40,10 @@ main {
   .break--mobile {
     display: none;
   }
+
+  .break--desktop {
+    display: inline;
+  }
 }
 
 .pre-footer {
