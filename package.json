@@ -23,7 +23,7 @@
         "adaptive",
         "vanilla-js"
     ],
-    "author": "Tамара",
+    "author": "Tамара Мальцева",
     "license": "MIT",
     "devDependencies": {
         "@babel/core": "^7.23.0",
