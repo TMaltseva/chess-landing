@@ -41,7 +41,7 @@
   }
   
   .tournament__image img {
-    width: 100%;
+    width: 105%;
     height: auto;
     object-fit: cover;
     display: block;
@@ -300,7 +300,7 @@
   
   @media (min-width: 1366px) {
     .tournament {
-      padding: 0 72px 140px 72px;
+      padding: 0 72px 200px 72px;
     }
 
     .tournament__info {

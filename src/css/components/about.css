@@ -1,7 +1,7 @@
   .about {
     background-color: var(--white-background);
     padding: 0 20px;
-    padding-top: 80px;
+    padding-top: 48px;
     position: relative;
     z-index: 1;
     margin-bottom: 34px;
@@ -67,8 +67,8 @@
   
   .about__visual {
     width: 335px;
-    height: 402px;
-    object-fit: cover;
+    height: auto;
+    object-fit: contain;
     transition: transform 0.3s ease;
     opacity: 1;
     order: 2;
@@ -91,6 +91,7 @@
   
   @media (min-width: 768px) {
     .about {
+      padding-top: 80px;
       padding-left: 36px;
       padding-right: 36px;
       margin-bottom: 64px;
@@ -136,6 +137,7 @@
     }
   
     .about__visual {
+      object-fit: cover;
       grid-area: image;
       width: 394px;
       height: 250px;

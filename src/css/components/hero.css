@@ -1,8 +1,8 @@
   .hero {
     position: relative;
     display: flex;
-    min-height: calc(100vh - 90px);
-    min-height: calc(100svh - 90px);
+    min-height: 100vh;
+    min-height: 100svh;
   }
 
   .hero > .ticker {
@@ -139,7 +139,8 @@
         position: absolute;
         top: 270px;
         right: 0;
-        height: 410px;
+        height: 100vh;
+        height: 100svh;
         background-image: url('../../assets/images/hero-composition-mobile.png');
         background-position: inherit;
       }
