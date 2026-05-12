@@ -30,7 +30,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/assets/images/overlay.png');
+    background-image: url('../../assets/images/overlay.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -65,11 +65,11 @@
     text-align: left;
   }
 
-  .tournament__title.mobile {
+  .tournament__title--mobile {
     display: block;
   }
 
-  .tournament__title.desktop {
+  .tournament__title--desktop {
     display: none;
   }
   
@@ -94,6 +94,12 @@
     border-bottom: 2px solid var(--divider-line-color);
   }
   
+  .tournament__detail:nth-child(4) {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 8px;
+  }
+
   .tournament__detail:last-child {
     border-bottom: none;
     padding-bottom: 0;
@@ -143,11 +149,11 @@
     text-align: left;
   }
 
-  .tournament__note.mobile {
+  .tournament__note--mobile {
     display: block;
   }
 
-  .tournament__note.desktop {
+  .tournament__note--desktop {
     display: none;
   }
   
@@ -193,11 +199,11 @@
       margin-bottom: 60px;
     }
 
-    .tournament__title.mobile {
+    .tournament__title--mobile {
         display: none;
       }
     
-      .tournament__title.desktop {
+      .tournament__title--desktop {
         display: block;
       }
   
@@ -212,7 +218,7 @@
       content: '';
       position: absolute;
       top: 0;
-      left: 50%;
+      left: 44%;
       transform: translateX(-50%);
       width: 2px;
       height: 100%;
@@ -247,13 +253,15 @@
     }
   
     .tournament__label {
+      width: 310px;
       padding: 16px 16px 16px 0;
       border-bottom: 2px solid var(--divider-line-color);
       text-align: left;
       font-size: 20px;
     }
-  
+
     .tournament__value {
+      width: 400px;
       padding: 16px 0 16px 16px;
       border-bottom: 2px solid var(--divider-line-color);
       text-align: left;
@@ -265,6 +273,11 @@
         width: 81px;
     }
   
+    .tournament__detail:first-child .tournament__label,
+    .tournament__detail:first-child .tournament__value {
+      padding-top: 0;
+    }
+
     .tournament__detail:last-child .tournament__label,
     .tournament__detail:last-child .tournament__value {
       border-bottom: none;
@@ -276,11 +289,11 @@
       margin-top: 0;
     }
 
-    .tournament__note.mobile {
+    .tournament__note--mobile {
         display: none;
       }
     
-      .tournament__note.desktop {
+      .tournament__note--desktop {
         display: block;
       }
   }
@@ -311,11 +324,11 @@
       font-size: 20px;
     }
 
-    .tournament__note.mobile {
+    .tournament__note--mobile {
         display: none;
       }
     
-      .tournament__note.desktop {
+      .tournament__note--desktop {
         display: block;
       }
 

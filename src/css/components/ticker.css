@@ -1,8 +1,5 @@
  .ticker {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    position: relative;
     overflow: hidden;
     height: 38px;
     background-color: var(--red-background);
@@ -46,7 +43,7 @@
 
   @media (min-width: 768px) {
     .ticker {
-      bottom: 0;
+      height: 46px;
     }
   }
   

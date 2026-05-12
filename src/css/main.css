@@ -8,6 +8,8 @@
 @import url('./components/hero.css');
 @import url('./components/about.css');
 @import url('./components/tournament.css');
+@import url('./components/steps.css');
+@import url('./components/players.css');
 
 body {
   min-height: 100vh;
@@ -21,7 +23,49 @@ main {
 }
 
 .main-content {
-    position: relative;
-    z-index: 1;
-    background-color: var(--white-background);
+  position: relative;
+  z-index: 1;
+  background-color: var(--white-background);
+}
+
+.pre-footer {
+  background-color: var(--white-background);
+  padding-top: 100px;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  min-height: 214px;
+  padding: 60px 20px;
+}
+
+.footer .container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+.footer__disclaimer {
+  font-family: var(--font-primary);
+  font-size: 16px;
+  line-height: 1.2;
+  color: var(--font-primary-color);
+  opacity: 0.6;
+}
+
+@media (min-width: 768px) {
+  .pre-footer {
+    padding-top: 140px;
   }
+
+  .footer {
+    min-height: 150px;
+    padding: 0 36px;
+  }
+}
+
+@media (min-width: 1366px) {
+  .footer {
+    padding: 0 72px;
+  }
+}
