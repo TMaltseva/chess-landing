@@ -1720,10 +1720,6 @@ ul, ol {
         margin: 0 auto;
     }
 
-    .players__slider {
-        width: auto;
-        margin-left: 0;
-    }
 
     .players__title {
         font-size: 54px;
@@ -1822,6 +1818,10 @@ main {
 @media (min-width: 768px) {
   .break--mobile {
     display: none;
+  }
+
+  .break--desktop {
+    display: block;
   }
 }
 
