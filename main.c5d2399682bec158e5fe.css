@@ -426,11 +426,15 @@ ul, ol {
 
   @media (min-width: 1366px) {
     .header {
-      height: 124px; 
+      height: 124px;
+      padding: 0 72px;
+      display: flex;
+      align-items: center;
     }
-    
+
     .header .container {
-      margin: var(--padding-desktop);
+      max-width: 1222px;
+      margin: 0 auto;
     }
 
     .header__logo svg {
@@ -440,10 +444,6 @@ ul, ol {
   }
   
   @media (min-width: 1920px) {
-    .header .container {
-        margin-left: 349px;
-      }
-    
     .header__title {
       font-size: 16.65px;
     }
@@ -624,6 +624,7 @@ ul, ol {
 
     .hero .container {
       max-width: 542px;
+      margin-left: max(0px, calc(50vw - 755px));
     }
 
     .hero__title {
