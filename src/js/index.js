@@ -17,7 +17,7 @@ function buildTickerContent(ticker) {
 
   const text = `${source.textContent} • `;
   line.replaceChildren(
-    ...Array.from({ length: 20 }, () => {
+    ...Array.from({ length: 15 }, () => {
       const span = document.createElement('span');
       span.className = 'ticker__text';
       span.textContent = text;
