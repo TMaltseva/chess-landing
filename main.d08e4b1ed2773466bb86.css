@@ -620,9 +620,6 @@ ul, ol {
     .hero {
       min-height: calc(100vh - 124px);
       padding: 0 72px;
-      max-width: 1366px;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .hero .container {
