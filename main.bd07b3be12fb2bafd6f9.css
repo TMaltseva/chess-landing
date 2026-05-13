@@ -299,7 +299,7 @@ ul, ol {
   @media (max-width: 1366px) {
     .btn--secondary {
       background-color: var(--white-background);
-      opacity: 0.9;
+      opacity: 1;
       color: var(--font-button);
     }
 
@@ -772,35 +772,36 @@ ul, ol {
 
     .about__content {
       display: grid;
-      grid-template-columns: 1fr 394px;
+      grid-template-columns: 1fr min(394px, 45%);
       grid-template-areas:
         "text image";
       align-items: center;
       width: 100%;
-      gap: 64px; 
+      gap: 64px;
       max-width: none;
     }
-  
+
     .about__text-content {
       grid-area: text;
       display: flex;
       flex-direction: column;
       align-items: flex-start;
       justify-content: center;
+      min-width: 0;
     }
-  
+
     .about__title {
       font-size: 36px;
       order: unset;
     }
-  
+
     .about__visual {
       object-fit: cover;
       grid-area: image;
-      width: 394px;
-      height: 250px;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 394 / 250;
       max-width: 394px;
-      max-height: 250px;
       align-self: center;
       margin-bottom: 0;
       order: unset;
