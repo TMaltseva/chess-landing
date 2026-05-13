@@ -610,6 +610,12 @@ ul, ol {
     }
   }
 
+  @media (min-width: 768px) {
+    .hero {
+      padding: 0 36px;
+    }
+  }
+
   @media (min-width: 1366px) {
     .hero {
       min-height: calc(100vh - 124px);
