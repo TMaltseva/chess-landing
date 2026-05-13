@@ -526,7 +526,7 @@ ul, ol {
     background-color: var(--beige-background);
     left: 0;
     bottom: 0;
-    background-image: url(/chess-landing/assets/images/hero-composition.f4e1d06d69566cadc5bf.png);
+    background-image: url(/chess-landing/66b6ce28292ef76b47db.webp);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center 70%;
@@ -540,7 +540,7 @@ ul, ol {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(/chess-landing/assets/images/overlay.d5b7488b9a9e491791a8.png);
+    background-image: url(/chess-landing/c328dcd78c844fab33b8.webp);
     background-size: cover;
     background-position: center;
     mix-blend-mode: color-burn;
@@ -554,7 +554,7 @@ ul, ol {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(/chess-landing/assets/images/overlay.d5b7488b9a9e491791a8.png);
+    background-image: url(/chess-landing/c328dcd78c844fab33b8.webp);
     background-size: cover;
     background-position: center;
     mix-blend-mode: color-burn;
@@ -574,7 +574,7 @@ ul, ol {
         left: 0;
         right: 0;
         height: 106%;
-        background-image: url(/chess-landing/assets/images/overlay.d5b7488b9a9e491791a8.png);
+        background-image: url(/chess-landing/c328dcd78c844fab33b8.webp);
         background-size: cover;
         mix-blend-mode: color-burn;
         opacity: 1;
@@ -587,7 +587,7 @@ ul, ol {
         right: 0;
         height: 100vh;
         height: 100svh;
-        background-image: url(/chess-landing/assets/images/hero-composition-mobile.defaeb2fcf2ca6d822a9.png);
+        background-image: url(/chess-landing/d7b436b64af97627aec2.webp);
         background-position: inherit;
       }
 
@@ -876,7 +876,7 @@ ul, ol {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url(/chess-landing/assets/images/overlay.d5b7488b9a9e491791a8.png);
+    background-image: url(/chess-landing/c328dcd78c844fab33b8.webp);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1266,7 +1266,7 @@ ul, ol {
 }
 
 .steps__slide::before {
-    background-image: url(/chess-landing/assets/images/texture+color.620854dadd43d24e113f.png);
+    background-image: url(/chess-landing/18c2cf9684f7dc8b5238.webp);
     background-size: cover;
     background-position: center;
     mix-blend-mode: multiply;
@@ -1274,7 +1274,7 @@ ul, ol {
 }
 
 .steps__slide::after {
-    background-image: url(/chess-landing/assets/images/texture.46ec822105cf680bbc8d.png);
+    background-image: url(/chess-landing/a41aa1d6ebdcca51a017.webp);
     background-size: cover;
     background-position: center;
     mix-blend-mode: overlay;
@@ -1352,8 +1352,8 @@ ul, ol {
     width: 36px;
     height: 36px;
     background-color: var(--font-primary-color);
-    -webkit-mask-image: url(/chess-landing/assets/images/carousel-button.220dd979b63caf865bc4.png);
-    mask-image: url(/chess-landing/assets/images/carousel-button.220dd979b63caf865bc4.png);
+    -webkit-mask-image: url(/chess-landing/b9834418ad2fa602a6e6.webp);
+    mask-image: url(/chess-landing/b9834418ad2fa602a6e6.webp);
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
     border: none;
@@ -1489,7 +1489,7 @@ ul, ol {
     }
 
     .steps__item::before {
-        background-image: url(/chess-landing/assets/images/texture+color.620854dadd43d24e113f.png);
+        background-image: url(/chess-landing/18c2cf9684f7dc8b5238.webp);
         background-size: cover;
         background-position: center;
         mix-blend-mode: multiply;
@@ -1497,7 +1497,7 @@ ul, ol {
     }
 
     .steps__item::after {
-        background-image: url(/chess-landing/assets/images/texture.46ec822105cf680bbc8d.png);
+        background-image: url(/chess-landing/a41aa1d6ebdcca51a017.webp);
         background-size: cover;
         background-position: center;
         mix-blend-mode: overlay;
@@ -1601,8 +1601,8 @@ ul, ol {
     width: 36px;
     height: 36px;
     background-color: var(--font-primary-color);
-    -webkit-mask-image: url(/chess-landing/assets/images/carousel-button.220dd979b63caf865bc4.png);
-    mask-image: url(/chess-landing/assets/images/carousel-button.220dd979b63caf865bc4.png);
+    -webkit-mask-image: url(/chess-landing/b9834418ad2fa602a6e6.webp);
+    mask-image: url(/chess-landing/b9834418ad2fa602a6e6.webp);
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
     border: none;
