@@ -1756,7 +1756,7 @@ ul, ol {
     }
 
     .players__card .btn--secondary {
-        margin-top: 20px;
+        margin-top: auto;
     }
 
     .players__photo {
