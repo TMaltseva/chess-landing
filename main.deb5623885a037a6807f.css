@@ -1710,6 +1710,11 @@ ul, ol {
         margin: 0 auto;
     }
 
+    .players__slider {
+        width: calc(100vw - 72px);
+        margin-left: calc(50% - 50vw + 36px);
+    }
+
 
     .players__title {
         font-size: 54px;
@@ -1759,6 +1764,11 @@ ul, ol {
 @media (min-width: 1366px) {
     .players {
         padding: 120px 72px 0;
+    }
+
+    .players__slider {
+        width: 100vw;
+        margin-left: calc(50% - 50vw);
     }
 
     .players__header {
