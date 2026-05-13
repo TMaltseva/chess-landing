@@ -1400,6 +1400,11 @@ ul, ol {
         margin-bottom: 32px;
     }
 
+    .steps__plane--slide {
+        top: 10%;
+        left: 80%;
+    }
+
     .steps__title {
         font-size: 54px;
     }
