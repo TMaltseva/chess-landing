@@ -56,8 +56,10 @@
     background-color: #D6D6D6;
 }
 
-.players__nav-btn:not(:disabled):hover {
-    background-color: var(--yellow-background);
+@media (hover: hover) and (pointer: fine) {
+    .players__nav-btn:not(:disabled):hover {
+        background-color: var(--yellow-background);
+    }
 }
 
 .players__nav-icon {
@@ -154,9 +156,11 @@
     display: none;
 }
 
-.players__card .btn--secondary:hover {
-    background-color: #3057A2;
-    color: #FFFFFF;
+@media (hover: hover) and (pointer: fine) {
+    .players__card .btn--secondary:hover {
+        background-color: #3057A2;
+        color: #FFFFFF;
+    }
 }
 
 @media (min-width: 768px) {

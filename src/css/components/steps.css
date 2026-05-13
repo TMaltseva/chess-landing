@@ -183,8 +183,10 @@
     background-color: #D6D6D6;
 }
 
-.steps__nav-btn:not(:disabled):hover {
-    background-color: var(--yellow-background);
+@media (hover: hover) and (pointer: fine) {
+    .steps__nav-btn:not(:disabled):hover {
+        background-color: var(--yellow-background);
+    }
 }
 
 .steps__nav-icon {

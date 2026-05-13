@@ -39,9 +39,11 @@
     color: var(--font-white-color);
   }
   
-  .btn--primary:hover {
-    background-color: var(--yellow-background);
-    color: var(--font-button);
+  @media (hover: hover) and (pointer: fine) {
+    .btn--primary:hover {
+      background-color: var(--yellow-background);
+      color: var(--font-button);
+    }
   }
   
   .btn--primary:active {
@@ -62,25 +64,27 @@
     pointer-events: none;
   }
 
-  .btn--secondary:hover {
-    background-color: var(--dark-background);
-    color: var(--font-white-color);
-  }
-
   .btn--outline {
     background-color: transparent;
     color: var(--font-accent-color);
   }
 
-  .btn--secondary:hover::before,
-  .btn--secondary:active::before {
-    opacity: 0;
-    visibility: hidden;
-  }
-  
-  .btn--outline:hover {
-    background-color: var(--font-accent-color);
-    color: var(--font-white-color);
+  @media (hover: hover) and (pointer: fine) {
+    .btn--secondary:hover {
+      background-color: var(--dark-background);
+      color: var(--font-white-color);
+    }
+
+    .btn--secondary:hover::before,
+    .btn--secondary:active::before {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .btn--outline:hover {
+      background-color: var(--font-accent-color);
+      color: var(--font-white-color);
+    }
   }
 
   .carousel-btn {
@@ -98,10 +102,12 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .carousel-btn:hover:not(:disabled) {
-    background-color: var(--yellow-background);
-    border-color: var(--yellow-background);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  @media (hover: hover) and (pointer: fine) {
+    .carousel-btn:hover:not(:disabled) {
+      background-color: var(--yellow-background);
+      border-color: var(--yellow-background);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
   }
   
   .carousel-btn:active:not(:disabled) {
@@ -138,9 +144,11 @@
     transition: all 0.3s ease;
   }
   
-  .dot:hover {
-    background-color: rgba(49, 49, 49, 0.6);
-    transform: scale(1.2);
+  @media (hover: hover) and (pointer: fine) {
+    .dot:hover {
+      background-color: rgba(49, 49, 49, 0.6);
+      transform: scale(1.2);
+    }
   }
   
   .dot.active {

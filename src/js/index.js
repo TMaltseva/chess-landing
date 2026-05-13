@@ -1,47 +1,53 @@
 import '../css/main.css';
 
 function initSmoothScroll() {
-  const buttons = document.querySelectorAll('[data-scroll-to]');
-
-  buttons.forEach(button => {
+  document.querySelectorAll('[data-scroll-to]').forEach(button => {
     button.addEventListener('click', e => {
       e.preventDefault();
-      const targetId = button.getAttribute('data-scroll-to');
-      const targetElement = document.getElementById(targetId);
-
-      if (targetElement) {
-        targetElement.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start',
-        });
-      }
+      const target = document.getElementById(button.getAttribute('data-scroll-to'));
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
 }
 
-function initSingleTicker(ticker) {
-  const tickerLine = ticker.querySelector('.ticker__line');
-  const originalText = ticker.querySelector('.ticker__text');
+function buildTickerContent(ticker) {
+  const line = ticker.querySelector('.ticker__line');
+  const source = ticker.querySelector('.ticker__text');
+  if (!line || !source) return;
 
-  if (!tickerLine || !originalText) return;
-
-  const { textContent } = originalText;
-  const textWithSeparator = `${textContent} • `;
-
-  tickerLine.replaceChildren();
-
-  for (let i = 0; i < 15; i += 1) {
-    const span = document.createElement('span');
-    span.className = 'ticker__text';
-    span.textContent = textWithSeparator;
-    tickerLine.appendChild(span);
-  }
-
-  tickerLine.style.animationDuration = '100s';
+  const text = `${source.textContent} • `;
+  line.replaceChildren(
+    ...Array.from({ length: 15 }, () => {
+      const span = document.createElement('span');
+      span.className = 'ticker__text';
+      span.textContent = text;
+      return span;
+    }),
+  );
+  line.style.animationDuration = '100s';
 }
 
-function initTicker() {
-  document.querySelectorAll('.ticker').forEach(ticker => initSingleTicker(ticker));
+function initTickers() {
+  document.querySelectorAll('.ticker').forEach(buildTickerContent);
+}
+
+function addSwipe(element, onNext, onPrev, threshold = 50) {
+  let startX = 0;
+  element.addEventListener(
+    'touchstart',
+    e => {
+      startX = e.touches[0].clientX;
+    },
+    { passive: true },
+  );
+  element.addEventListener(
+    'touchend',
+    e => {
+      const diff = startX - e.changedTouches[0].clientX;
+      if (Math.abs(diff) > threshold) (diff > 0 ? onNext : onPrev)();
+    },
+    { passive: true },
+  );
 }
 
 function initStepsCarousel() {
@@ -69,22 +75,10 @@ function initStepsCarousel() {
   prevBtn.addEventListener('click', () => goTo(current - 1));
   nextBtn.addEventListener('click', () => goTo(current + 1));
   dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
-
-  let startX = 0;
-  grid.addEventListener(
-    'touchstart',
-    e => {
-      startX = e.touches[0].clientX;
-    },
-    { passive: true },
-  );
-  grid.addEventListener(
-    'touchend',
-    e => {
-      const diff = startX - e.changedTouches[0].clientX;
-      if (Math.abs(diff) > 50) goTo(current + (diff > 0 ? 1 : -1));
-    },
-    { passive: true },
+  addSwipe(
+    grid,
+    () => goTo(current + 1),
+    () => goTo(current - 1),
   );
 
   mq.addEventListener('change', e => {
@@ -100,7 +94,7 @@ function initPlayersCarousel() {
   const cards = Array.from(document.querySelectorAll('.players__card'));
   const prevBtns = Array.from(document.querySelectorAll('.players__nav-btn--prev'));
   const nextBtns = Array.from(document.querySelectorAll('.players__nav-btn--next'));
-  const counterCurrentEls = Array.from(document.querySelectorAll('.players__counter-current'));
+  const counterEls = Array.from(document.querySelectorAll('.players__counter-current'));
 
   if (!track || !cards.length) return;
 
@@ -108,65 +102,70 @@ function initPlayersCarousel() {
   let current = 0;
   let autoTimer = null;
 
-  function getVisibleCount() {
+  function visibleCount() {
     return window.innerWidth >= 768 ? 3 : 1;
   }
 
-  function goTo(index) {
-    const visibleCount = getVisibleCount();
-    const maxIndex = total - visibleCount;
+  function clampIndex(index) {
+    const max = total - visibleCount();
+    if (index < 0) return max;
+    if (index > max) return 0;
+    return index;
+  }
 
-    if (index < 0) current = maxIndex;
-    else if (index > maxIndex) current = 0;
-    else current = index;
-
-    const card = cards[0];
+  function updateDisplay() {
     const gap = parseFloat(getComputedStyle(track).gap) || 0;
-    track.style.transform = `translateX(-${current * (card.offsetWidth + gap)}px)`;
-
-    counterCurrentEls.forEach(el => {
-      el.textContent = Math.min(current + visibleCount, total);
+    track.style.transform = `translateX(-${current * (cards[0].offsetWidth + gap)}px)`;
+    counterEls.forEach(el => {
+      el.textContent = Math.min(current + visibleCount(), total);
     });
-    prevBtns.forEach(btn => {
-      btn.disabled = false;
-    });
-    nextBtns.forEach(btn => {
+    [...prevBtns, ...nextBtns].forEach(btn => {
       btn.disabled = false;
     });
   }
 
-  function resetTimer() {
+  function goTo(index) {
+    current = clampIndex(index);
+    updateDisplay();
+  }
+
+  function scheduleAutoAdvance() {
     clearInterval(autoTimer);
-    autoTimer = setInterval(() => goTo(current + getVisibleCount()), 4000);
+    autoTimer = setInterval(() => goTo(current + visibleCount()), 4000);
   }
 
   prevBtns.forEach(btn =>
     btn.addEventListener('click', () => {
-      goTo(current - getVisibleCount());
-      resetTimer();
+      goTo(current - visibleCount());
+      scheduleAutoAdvance();
     }),
   );
+
   nextBtns.forEach(btn =>
     btn.addEventListener('click', () => {
-      goTo(current + getVisibleCount());
-      resetTimer();
+      goTo(current + visibleCount());
+      scheduleAutoAdvance();
     }),
+  );
+
+  addSwipe(
+    track,
+    () => goTo(current + 1),
+    () => goTo(current - 1),
   );
 
   window.addEventListener('resize', () => {
-    const visibleCount = getVisibleCount();
-    const snapped = Math.round(current / visibleCount) * visibleCount;
-    goTo(Math.min(snapped, total - visibleCount));
-    resetTimer();
+    const count = visibleCount();
+    goTo(Math.min(Math.round(current / count) * count, total - count));
   });
 
   goTo(0);
-  resetTimer();
+  scheduleAutoAdvance();
 }
 
 document.addEventListener('DOMContentLoaded', () => {
   initSmoothScroll();
-  initTicker();
+  initTickers();
   initStepsCarousel();
   initPlayersCarousel();
 });

@@ -74,8 +74,10 @@
     order: 2;
   }
   
-  .about__visual:hover {
-    transform: scale(1.02);
+  @media (hover: hover) and (pointer: fine) {
+    .about__visual:hover {
+      transform: scale(1.02);
+    }
   }
   
   .about__subtitle {
