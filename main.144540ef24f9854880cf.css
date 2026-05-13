@@ -179,9 +179,11 @@ ul, ol {
     color: var(--font-white-color);
   }
   
-  .btn--primary:hover {
-    background-color: var(--yellow-background);
-    color: var(--font-button);
+  @media (hover: hover) and (pointer: fine) {
+    .btn--primary:hover {
+      background-color: var(--yellow-background);
+      color: var(--font-button);
+    }
   }
   
   .btn--primary:active {
@@ -202,25 +204,27 @@ ul, ol {
     pointer-events: none;
   }
 
-  .btn--secondary:hover {
-    background-color: var(--dark-background);
-    color: var(--font-white-color);
-  }
-
   .btn--outline {
     background-color: transparent;
     color: var(--font-accent-color);
   }
 
-  .btn--secondary:hover::before,
-  .btn--secondary:active::before {
-    opacity: 0;
-    visibility: hidden;
-  }
-  
-  .btn--outline:hover {
-    background-color: var(--font-accent-color);
-    color: var(--font-white-color);
+  @media (hover: hover) and (pointer: fine) {
+    .btn--secondary:hover {
+      background-color: var(--dark-background);
+      color: var(--font-white-color);
+    }
+
+    .btn--secondary:hover::before,
+    .btn--secondary:active::before {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    .btn--outline:hover {
+      background-color: var(--font-accent-color);
+      color: var(--font-white-color);
+    }
   }
 
   .carousel-btn {
@@ -238,10 +242,12 @@ ul, ol {
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   }
   
-  .carousel-btn:hover:not(:disabled) {
-    background-color: var(--yellow-background);
-    border-color: var(--yellow-background);
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  @media (hover: hover) and (pointer: fine) {
+    .carousel-btn:hover:not(:disabled) {
+      background-color: var(--yellow-background);
+      border-color: var(--yellow-background);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    }
   }
   
   .carousel-btn:active:not(:disabled) {
@@ -278,9 +284,11 @@ ul, ol {
     transition: all 0.3s ease;
   }
   
-  .dot:hover {
-    background-color: rgba(49, 49, 49, 0.6);
-    transform: scale(1.2);
+  @media (hover: hover) and (pointer: fine) {
+    .dot:hover {
+      background-color: rgba(49, 49, 49, 0.6);
+      transform: scale(1.2);
+    }
   }
   
   .dot.active {
@@ -714,8 +722,10 @@ ul, ol {
     order: 2;
   }
   
-  .about__visual:hover {
-    transform: scale(1.02);
+  @media (hover: hover) and (pointer: fine) {
+    .about__visual:hover {
+      transform: scale(1.02);
+    }
   }
   
   .about__subtitle {
@@ -1357,8 +1367,10 @@ ul, ol {
     background-color: #D6D6D6;
 }
 
-.steps__nav-btn:not(:disabled):hover {
-    background-color: var(--yellow-background);
+@media (hover: hover) and (pointer: fine) {
+    .steps__nav-btn:not(:disabled):hover {
+        background-color: var(--yellow-background);
+    }
 }
 
 .steps__nav-icon {
@@ -1604,8 +1616,10 @@ ul, ol {
     background-color: #D6D6D6;
 }
 
-.players__nav-btn:not(:disabled):hover {
-    background-color: var(--yellow-background);
+@media (hover: hover) and (pointer: fine) {
+    .players__nav-btn:not(:disabled):hover {
+        background-color: var(--yellow-background);
+    }
 }
 
 .players__nav-icon {
@@ -1702,9 +1716,11 @@ ul, ol {
     display: none;
 }
 
-.players__card .btn--secondary:hover {
-    background-color: #3057A2;
-    color: #FFFFFF;
+@media (hover: hover) and (pointer: fine) {
+    .players__card .btn--secondary:hover {
+        background-color: #3057A2;
+        color: #FFFFFF;
+    }
 }
 
 @media (min-width: 768px) {
