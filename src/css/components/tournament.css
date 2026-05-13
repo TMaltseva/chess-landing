@@ -161,7 +161,7 @@
     .tournament {
       padding: 0 36px 200px 36px;
     }
-  
+
     .tournament .container {
       display: flex;
       flex-direction: row;
@@ -171,7 +171,7 @@
       margin: 0 auto;
       gap: 17px;
     }
-  
+
     .tournament__image {
       width: 335px;
       max-width: 335px;
@@ -180,40 +180,67 @@
       order: 1;
       flex-shrink: 0;
     }
-  
+
     .tournament__image img {
       width: 100%;
       height: 100%;
       object-fit: cover;
     }
-  
+
     .tournament__info {
       flex: 1;
       order: 2;
-      max-width: 716px;
       min-width: 0;
     }
-  
+
     .tournament__title {
       font-size: 36px;
       margin-bottom: 60px;
     }
 
     .tournament__title--mobile {
-        display: none;
-      }
-    
-      .tournament__title--desktop {
-        display: block;
-      }
+      display: none;
+    }
+
+    .tournament__title--desktop {
+      display: block;
+    }
+
+    .tournament__note {
+      font-size: 20px;
+      margin-top: 0;
+    }
+
+    .tournament__note--mobile {
+      display: none;
+    }
+
+    .tournament__note--desktop {
+      display: block;
+    }
+  }
   
+  @media (min-width: 1366px) {
+    .tournament {
+      padding: 0 72px 200px 72px;
+    }
+
+    .tournament__info {
+      max-width: 704px;
+    }
+
+    .tournament__title {
+      font-size: 36px;
+    }
+
     .tournament__details {
       display: grid;
       grid-template-columns: 1fr 2px 1fr;
       gap: 0;
+      margin-bottom: 48px;
       position: relative;
     }
-  
+
     .tournament__details::before {
       content: '';
       position: absolute;
@@ -225,33 +252,27 @@
       background-color: var(--divider-line-color);
       z-index: 1;
     }
-  
+
     .tournament__detail {
       display: contents;
     }
-  
+
     .tournament__detail:nth-child(1) .tournament__label,
     .tournament__detail:nth-child(2) .tournament__label,
-    .tournament__detail:nth-child(3) .tournament__label {
-      grid-column: 1;
-    }
-  
-    .tournament__detail:nth-child(1) .tournament__value,
-    .tournament__detail:nth-child(2) .tournament__value,
-    .tournament__detail:nth-child(3) .tournament__value {
-      grid-column: 3;
-    }
-  
+    .tournament__detail:nth-child(3) .tournament__label,
     .tournament__detail:nth-child(4) .tournament__label,
     .tournament__detail:nth-child(5) .tournament__label {
       grid-column: 1;
     }
-  
+
+    .tournament__detail:nth-child(1) .tournament__value,
+    .tournament__detail:nth-child(2) .tournament__value,
+    .tournament__detail:nth-child(3) .tournament__value,
     .tournament__detail:nth-child(4) .tournament__value,
     .tournament__detail:nth-child(5) .tournament__value {
       grid-column: 3;
     }
-  
+
     .tournament__label {
       width: 310px;
       padding: 16px 16px 16px 0;
@@ -270,9 +291,9 @@
     }
 
     .tournament__value--strikethrough::before {
-        width: 81px;
+      width: 81px;
     }
-  
+
     .tournament__detail:first-child .tournament__label,
     .tournament__detail:first-child .tournament__value {
       padding-top: 0;
@@ -283,58 +304,10 @@
       border-bottom: none;
       padding-bottom: 0;
     }
-  
-    .tournament__note {
-      font-size: 20px;
-      margin-top: 0;
-    }
 
-    .tournament__note--mobile {
-        display: none;
-      }
-    
-      .tournament__note--desktop {
-        display: block;
-      }
-  }
-  
-  @media (min-width: 1366px) {
-    .tournament {
-      padding: 0 72px 200px 72px;
+    .tournament__image {
+      width: 474px;
+      max-width: 474px;
+      height: 527px;
     }
-
-    .tournament__info {
-      max-width: 704px;
-    }
-  
-    .tournament__title {
-      font-size: 36px;
-    }
-  
-    .tournament__details {
-      gap: 0;
-      margin-bottom: 48px;
-    }
-  
-    .tournament__detail {
-      padding-bottom: 24px;
-    }
-  
-    .tournament__note {
-      font-size: 20px;
-    }
-
-    .tournament__note--mobile {
-        display: none;
-      }
-    
-      .tournament__note--desktop {
-        display: block;
-      }
-
-      .tournament__image {
-        width: 474px;
-        max-width: 474px;
-        height: 527px;
-      }
   }

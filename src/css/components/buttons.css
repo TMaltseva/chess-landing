@@ -159,7 +159,7 @@
   @media (max-width: 1366px) {
     .btn--secondary {
       background-color: var(--white-background);
-      opacity: 0.9;
+      opacity: 1;
       color: var(--font-button);
     }
 

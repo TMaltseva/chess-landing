@@ -172,6 +172,11 @@
         margin: 0 auto;
     }
 
+    .players__slider {
+        width: calc(100vw - 72px);
+        margin-left: calc(50% - 50vw + 36px);
+    }
+
 
     .players__title {
         font-size: 54px;
@@ -208,18 +213,28 @@
     }
 
     .players__card .btn--secondary {
-        margin-top: 20px;
+        margin-top: auto;
     }
 
     .players__photo {
-        width: 320px;
-        height: 320px;
+        width: min(320px, 100%);
+        height: auto;
+        aspect-ratio: 1 / 1;
     }
 }
 
 @media (min-width: 1366px) {
     .players {
         padding: 120px 72px 0;
+    }
+
+    .players__slider {
+        width: min(100vw, 1366px);
+        margin-left: max(calc(50% - 50vw), calc(50% - 683px));
+    }
+
+    .players__card .btn--secondary {
+        margin-top: 20px;
     }
 
     .players__header {

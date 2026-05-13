@@ -51,7 +51,7 @@ function addSwipe(element, onNext, onPrev, threshold = 50) {
 }
 
 function initStepsCarousel() {
-  const mq = window.matchMedia('(max-width: 767px)');
+  const mq = window.matchMedia('(max-width: 1365px)');
   const grid = document.querySelector('.steps__grid');
   const slides = Array.from(document.querySelectorAll('.steps__slide'));
   const dots = Array.from(document.querySelectorAll('.steps__dot'));
