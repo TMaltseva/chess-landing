@@ -1749,10 +1749,11 @@ ul, ol {
 
     .players__card .players__role {
         margin-top: 6px;
+        flex-grow: 1;
     }
 
     .players__card .btn--secondary {
-        margin-top: auto;
+        margin-top: 20px;
     }
 
     .players__photo {
