@@ -486,11 +486,7 @@ ul, ol {
     text-align: right;
   }
 
-  .hero__subtitle br {
-    display: none;
-  }
-
-  .hero__title-nowrap {
+.hero__title-nowrap {
     white-space: nowrap;
   }
   
