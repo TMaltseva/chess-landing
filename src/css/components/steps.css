@@ -80,7 +80,7 @@
 }
 
 .steps__slide::before {
-    background-image: url('../../assets/images/texture+color.png');
+    background-image: url('../../assets/images/webp/texture+color.webp');
     background-size: cover;
     background-position: center;
     mix-blend-mode: multiply;
@@ -88,7 +88,7 @@
 }
 
 .steps__slide::after {
-    background-image: url('../../assets/images/texture.png');
+    background-image: url('../../assets/images/webp/texture.webp');
     background-size: cover;
     background-position: center;
     mix-blend-mode: overlay;
@@ -166,8 +166,8 @@
     width: 36px;
     height: 36px;
     background-color: var(--font-primary-color);
-    -webkit-mask-image: url('../../assets/images/carousel-button.png');
-    mask-image: url('../../assets/images/carousel-button.png');
+    -webkit-mask-image: url('../../assets/images/webp/carousel-button.webp');
+    mask-image: url('../../assets/images/webp/carousel-button.webp');
     -webkit-mask-size: 100% 100%;
     mask-size: 100% 100%;
     border: none;
@@ -303,7 +303,7 @@
     }
 
     .steps__item::before {
-        background-image: url('../../assets/images/texture+color.png');
+        background-image: url('../../assets/images/webp/texture+color.webp');
         background-size: cover;
         background-position: center;
         mix-blend-mode: multiply;
@@ -311,7 +311,7 @@
     }
 
     .steps__item::after {
-        background-image: url('../../assets/images/texture.png');
+        background-image: url('../../assets/images/webp/texture.webp');
         background-size: cover;
         background-position: center;
         mix-blend-mode: overlay;

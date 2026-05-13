@@ -37,8 +37,10 @@
     }
   }
   
-  .ticker:hover .ticker__line {
-    animation-play-state: paused;
+  @media (hover: hover) and (pointer: fine) {
+    .ticker:hover .ticker__line {
+      animation-play-state: paused;
+    }
   }
 
   @media (min-width: 768px) {
