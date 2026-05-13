@@ -624,7 +624,7 @@ ul, ol {
 
     .hero .container {
       max-width: 542px;
-      margin-left: max(0px, calc(50vw - 755px));
+      margin-left: max(0px, calc(50vw - 683px));
     }
 
     .hero__title {
