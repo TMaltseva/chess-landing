@@ -620,6 +620,9 @@ ul, ol {
     .hero {
       min-height: calc(100vh - 124px);
       padding: 0 72px;
+      max-width: 1366px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .hero .container {
@@ -642,11 +645,6 @@ ul, ol {
       }
   }
 
-  @media (min-width: 1920px) {
-    .hero .container {
-        margin-left: 349px;
-      }
-  }
 
   @media (max-width: 360px) {
     body::before {
@@ -1773,8 +1771,12 @@ ul, ol {
     }
 
     .players__slider {
-        width: 100vw;
-        margin-left: calc(50% - 50vw);
+        width: min(100vw, 1366px);
+        margin-left: max(calc(50% - 50vw), calc(50% - 683px));
+    }
+
+    .players__card .btn--secondary {
+        margin-top: 20px;
     }
 
     .players__header {
