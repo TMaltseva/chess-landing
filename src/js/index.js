@@ -91,76 +91,187 @@ function initStepsCarousel() {
 
 function initPlayersCarousel() {
   const track = document.querySelector('.players__track');
-  const cards = Array.from(document.querySelectorAll('.players__card'));
+  if (!track) return;
+
   const prevBtns = Array.from(document.querySelectorAll('.players__nav-btn--prev'));
   const nextBtns = Array.from(document.querySelectorAll('.players__nav-btn--next'));
   const counterEls = Array.from(document.querySelectorAll('.players__counter-current'));
+  const originals = Array.from(track.querySelectorAll('.players__card'));
+  const total = originals.length;
+  if (!total) return;
 
-  if (!track || !cards.length) return;
-
-  const total = cards.length;
-  let current = 0;
+  let pos = 0;
   let autoTimer = null;
+  let looping = false;
+  let snapTo = null;
 
-  function visibleCount() {
+  function visible() {
     return window.innerWidth >= 768 ? 3 : 1;
   }
-
-  function clampIndex(index) {
-    const max = total - visibleCount();
-    if (index < 0) return max;
-    if (index > max) return 0;
-    return index;
+  function maxPos() {
+    return total - visible();
   }
 
-  function updateDisplay() {
-    const gap = parseFloat(getComputedStyle(track).gap) || 0;
-    track.style.transform = `translateX(-${current * (cards[0].offsetWidth + gap)}px)`;
+  function setupClones() {
+    track.querySelectorAll('[data-clone]').forEach(n => n.remove());
+    const v = visible();
+    for (let i = v - 1; i >= 0; i -= 1) {
+      const c = originals[(total - v + i) % total].cloneNode(true);
+      c.dataset.clone = '';
+      track.insertBefore(c, track.firstChild);
+    }
+    for (let i = 0; i < v; i += 1) {
+      const c = originals[i % total].cloneNode(true);
+      c.dataset.clone = '';
+      track.appendChild(c);
+    }
+  }
+
+  function cardStep() {
+    const first = track.querySelector('.players__card');
+    if (!first) return 0;
+    return first.offsetWidth + (parseFloat(getComputedStyle(track).gap) || 0);
+  }
+
+  function render(p, animate) {
+    const v = visible();
+    const x = (v + p) * cardStep();
+    if (!animate) {
+      track.style.transition = 'none';
+      track.style.transform = `translateX(-${x}px)`;
+      track.getBoundingClientRect();
+      track.style.transition = '';
+    } else {
+      track.style.transform = `translateX(-${x}px)`;
+    }
     counterEls.forEach(el => {
-      el.textContent = Math.min(current + visibleCount(), total);
-    });
-    [...prevBtns, ...nextBtns].forEach(btn => {
-      btn.disabled = false;
+      el.textContent = Math.min(pos + v, total);
     });
   }
 
-  function goTo(index) {
-    current = clampIndex(index);
-    updateDisplay();
+  track.addEventListener('transitionend', e => {
+    if (e.propertyName !== 'transform') return;
+    looping = false;
+    if (snapTo !== null) {
+      pos = snapTo;
+      snapTo = null;
+      render(pos, false);
+    }
+  });
+
+  function advance(delta) {
+    if (looping) return;
+    const v = visible();
+    const max = maxPos();
+    const next = pos + delta;
+
+    if (next > max) {
+      looping = true;
+      snapTo = next - total;
+      render(max + v, true);
+    } else if (next < 0) {
+      looping = true;
+      snapTo = next + total;
+      render(-v, true);
+    } else {
+      pos = next;
+      render(pos, true);
+    }
   }
 
-  function scheduleAutoAdvance() {
+  function scheduleAuto() {
     clearInterval(autoTimer);
-    autoTimer = setInterval(() => goTo(current + visibleCount()), 4000);
+    autoTimer = setInterval(() => advance(visible()), 4000);
   }
 
   prevBtns.forEach(btn =>
     btn.addEventListener('click', () => {
-      goTo(current - visibleCount());
-      scheduleAutoAdvance();
+      advance(-visible());
+      scheduleAuto();
     }),
   );
-
   nextBtns.forEach(btn =>
     btn.addEventListener('click', () => {
-      goTo(current + visibleCount());
-      scheduleAutoAdvance();
+      advance(visible());
+      scheduleAuto();
     }),
   );
-
   addSwipe(
     track,
-    () => goTo(current + 1),
-    () => goTo(current - 1),
+    () => {
+      advance(1);
+      scheduleAuto();
+    },
+    () => {
+      advance(-1);
+      scheduleAuto();
+    },
   );
 
+  let prevV = visible();
   window.addEventListener('resize', () => {
-    const count = visibleCount();
-    goTo(Math.min(Math.round(current / count) * count, total - count));
+    const v = visible();
+    if (v !== prevV) {
+      prevV = v;
+      looping = false;
+      snapTo = null;
+      pos = Math.min(pos, maxPos());
+      setupClones();
+    }
+    render(pos, false);
   });
 
-  goTo(0);
-  scheduleAutoAdvance();
+  [...prevBtns, ...nextBtns].forEach(btn => {
+    btn.disabled = false;
+  });
+  setupClones();
+  render(pos, false);
+
+  const section = document.querySelector('.players');
+  if (section && window.IntersectionObserver) {
+    const io = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          scheduleAuto();
+          io.disconnect();
+        }
+      },
+      { threshold: 0.4 },
+    );
+    io.observe(section);
+  } else {
+    scheduleAuto();
+  }
+}
+
+function initScrollAnimations() {
+  if (!window.IntersectionObserver) return;
+
+  const observer = new IntersectionObserver(
+    entries =>
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      }),
+    { threshold: 0.1, rootMargin: '0px 0px -32px 0px' },
+  );
+
+  [
+    '.about__content',
+    '.tournament__image',
+    '.tournament__info',
+    '.steps__header',
+    '.steps__slider',
+    '.players__header',
+    '.players__slider',
+  ].forEach(sel => {
+    document.querySelectorAll(sel).forEach(el => {
+      el.classList.add('fade-up');
+      observer.observe(el);
+    });
+  });
 }
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -168,4 +279,5 @@ document.addEventListener('DOMContentLoaded', () => {
   initTickers();
   initStepsCarousel();
   initPlayersCarousel();
+  initScrollAnimations();
 });
