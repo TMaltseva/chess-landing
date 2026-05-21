@@ -257,3 +257,9 @@
         display: block;
     }
 }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    .players__title {
+      font-size: 24px;
+    }
+  }

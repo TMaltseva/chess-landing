@@ -195,3 +195,11 @@
       transform: none;
     }
   }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    .about__title,
+    .about__subtitle,
+    .about__extra-heading {
+      font-size: 24px;
+    }
+  }
