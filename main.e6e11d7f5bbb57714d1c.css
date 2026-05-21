@@ -865,11 +865,13 @@ ul, ol {
   
   .tournament__image {
     width: 100%;
-    max-width: 335px; 
+    max-width: 335px;
     height: auto;
     margin-bottom: 24px;
     order: 1;
     flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
   }
 
   .tournament__image::before {
@@ -1796,6 +1798,39 @@ ul, ol {
         object-fit: contain;
         display: block;
     }
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.fade-up.is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fade-up {
+    transition: none;
+    opacity: 1;
+    transform: none;
+  }
+}
+
+.img-hover {
+  overflow: hidden;
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .img-hover img {
+    transition: transform 0.4s ease;
+  }
+
+  .img-hover:hover img {
+    transform: scale(1.04);
+  }
 }
 
 body {
