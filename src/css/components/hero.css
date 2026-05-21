@@ -1,22 +1,21 @@
   .hero {
     position: relative;
     display: flex;
-    min-height: 100vh;
-    min-height: 100svh;
+    flex-direction: column;
+    min-height: calc(100vh - 90px);
+    min-height: calc(100svh - 90px);
   }
 
   .hero > .ticker {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
     z-index: 3;
   }
 
   .hero .container {
     position: relative;
     z-index: 2;
-    align-items: center;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
     max-width: 335px;
   }
 
@@ -164,12 +163,24 @@
     .hero {
       padding: 0 36px;
     }
+
+    .hero > .ticker {
+      margin: 0 -36px;
+    }
+
+    .hero__background {
+      background-position: 65% 60%;
+    }
   }
 
   @media (min-width: 1366px) {
     .hero {
       min-height: calc(100vh - 124px);
       padding: 0 72px;
+    }
+
+    .hero > .ticker {
+      margin: 0 -72px;
     }
 
     .hero .container {
@@ -198,4 +209,22 @@
     body::before {
         display: none;
       }
+  }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    .hero__title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .hero__subtitle {
+      font-size: 14px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero__buttons {
+      flex-direction: row;
+      gap: 12px;
+    }
   }
