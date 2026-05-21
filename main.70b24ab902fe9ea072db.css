@@ -612,6 +612,10 @@ ul, ol {
     .hero {
       padding: 0 36px;
     }
+
+    .hero__background {
+      background-position: 65% 60%;
+    }
   }
 
   @media (min-width: 1366px) {
@@ -1829,6 +1833,23 @@ ul, ol {
   .img-hover:hover img {
     transform: scale(1.04);
   }
+}
+
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 8px;
+  z-index: 100;
+  padding: 8px 16px;
+  background: var(--dark-background);
+  color: var(--font-white-color);
+  border-radius: 0 0 4px 4px;
+  font-size: 14px;
+  transition: top 0.2s;
+}
+
+.skip-link:focus {
+  top: 0;
 }
 
 body {
