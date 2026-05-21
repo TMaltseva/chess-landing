@@ -16,11 +16,13 @@
   
   .tournament__image {
     width: 100%;
-    max-width: 335px; 
+    max-width: 335px;
     height: auto;
     margin-bottom: 24px;
     order: 1;
     flex-shrink: 0;
+    position: relative;
+    overflow: hidden;
   }
 
   .tournament__image::before {
