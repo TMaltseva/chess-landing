@@ -170,6 +170,12 @@
     
   }
 
+  @media (orientation: landscape) and (max-height: 500px) {
+    .btn {
+      font-size: 12px;
+    }
+  }
+
   @media (min-width: 1366px) {
     .btn {
       height: 72px;
