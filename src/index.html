@@ -4,16 +4,28 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=360, initial-scale=1.0, minimum-scale=1.0">
     <link rel="icon" href="./assets/icons/favicon.ico" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" as="style">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap" media="print" onload="this.media='all'">
     <noscript>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&family=Merriweather:ital,opsz,wght@0,18..144,300..900;1,18..144,300..900&display=swap">
     </noscript>
-    <title>Chess Landing</title>
-    <meta name="description" content="Превратите уездный город в столицу земного шара. Международный васюковский турнир по шахматам.">
+
+    <link rel="preload" as="image" href="./assets/images/webp/hero-composition.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high">
+    <link rel="preload" as="image" href="./assets/images/webp/hero-composition-mobile.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high">
+    <link rel="preload" as="image" href="./assets/images/webp/overlay.webp" type="image/webp" fetchpriority="high">
+    <title>Клуб четырёх коней — Международный васюкинский турнир по шахматам</title>
+    <meta name="description" content="Превратите уездный город в столицу земного шара. Поддержите Международный васюкинский шахматный турнир — лекция, сеанс одновременной игры, 160 досок.">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Клуб четырёх коней — Международный васюкинский турнир">
+    <meta property="og:description" content="Превратите уездный город в столицу земного шара. Поддержите Международный васюкинский шахматный турнир.">
+    <meta property="og:image" content="./assets/images/webp/hero-composition.webp">
+    <meta property="og:locale" content="ru_RU">
   </head>
   <body>
+    <a href="#main" class="skip-link">Перейти к содержимому</a>
     <header class="header">
         <div class="container">
             <div class="header__logo">
@@ -68,7 +80,7 @@
 
     <div class="hero__background" aria-hidden="true"></div>
 
-    <main class="main-content">
+    <main class="main-content" id="main">
         <section class="about" id="about">
             <div class="container">
               <div class="about__content">
@@ -81,7 +93,7 @@
                       </span>
                     </h2>
                     
-                    <img src="./assets/images/webp/about.webp"
+                    <img src="./assets/images/webp/about.webp" loading="lazy"
                          alt="Шахматисты за игрой" 
                          class="about__visual">
 
@@ -102,7 +114,7 @@
         <section class="tournament" id="tournament">
             <div class="container">
                 <div class="tournament__image">
-                    <img src="./assets/images/webp/tour.webp"
+                    <img src="./assets/images/webp/tour.webp" loading="lazy"
                         alt="Гроссмейстер на шахматном турнире">
                 </div>
                 <div class="tournament__info">
@@ -176,17 +188,17 @@
                         <div class="steps__slide">
                             <div class="steps__item">
                                 <span class="steps__number">3</span>
-                                <p class="steps__text">Поднятие сельского хозяйства в радиусе на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет</p>
+                                <p class="steps__text">Поднятие сельского хозяйства в радиусе <br class="break--mobile">на тысячу километров: производство овощей, фруктов, икры, шоколадных конфет</p>
                             </div>
                         </div>
                         <div class="steps__slide">
                             <div class="steps__item">
                                 <span class="steps__number">4</span>
-                                <p class="steps__text">Строительство дворца для турнира</p>
+                                <p class="steps__text">Строительство дворца <br class="break--mobile">для турнира</p>
                             </div>
                             <div class="steps__item">
                                 <span class="steps__number">5</span>
-                                <p class="steps__text">Размещение гаражей для гостевого автотранспорта</p>
+                                <p class="steps__text">Размещение гаражей <br class="break--mobile">для гостевого автотранспорта</p>
                             </div>
                         </div>
                         <div class="steps__slide">
@@ -198,10 +210,10 @@
                         <div class="steps__slide">
                             <div class="steps__item">
                                 <span class="steps__number">7</span>
-                                <p class="steps__text">Создание аэропорта «Большие Васюки» с регулярным отправлением почтовых самолётов и дирижаблей во все концы света, включая Лос-Анжелес и Мельбурн</p>
+                                <p class="steps__text">Создание аэропорта «Большие Васюки» <br class="break--mobile">с регулярным отправлением почтовых самолётов и дирижаблей <br class="break--mobile">во все концы света, включая Лос-Анжелес <br class="break--mobile">и Мельбурн</p>
                             </div>
                         </div>
-                        <img src="./assets/images/webp/plane.webp" alt="Самолёт" class="steps__plane steps__plane--desktop">
+                        <img src="./assets/images/webp/plane.webp" alt="" aria-hidden="true" class="steps__plane steps__plane--desktop">
                     </div>
                 </div>
                 <div class="steps__nav">
@@ -240,7 +252,7 @@
                     <div class="players__track">
                         <div class="players__card">
                             <div class="players__photo">
-                                <img src="./assets/images/webp/participants.webp" alt="Хозе-Рауль Капабланка">
+                                <img src="./assets/images/webp/participants.webp" loading="lazy" alt="Хозе-Рауль Капабланка">
                             </div>
                             <h3 class="players__name">Хозе-Рауль Капабланка</h3>
                             <p class="players__role">Чемпион мира по шахматам</p>
@@ -248,7 +260,7 @@
                         </div>
                         <div class="players__card">
                             <div class="players__photo">
-                                <img src="./assets/images/webp/participants.webp" alt="Эммануил Ласкер">
+                                <img src="./assets/images/webp/participants.webp" loading="lazy" alt="Эммануил Ласкер">
                             </div>
                             <h3 class="players__name">Эммануил Ласкер</h3>
                             <p class="players__role">Чемпион мира по шахматам</p>
@@ -256,7 +268,7 @@
                         </div>
                         <div class="players__card">
                             <div class="players__photo">
-                                <img src="./assets/images/webp/participants.webp" alt="Александр Алехин">
+                                <img src="./assets/images/webp/participants.webp" loading="lazy" alt="Александр Алехин">
                             </div>
                             <h3 class="players__name">Александр Алехин</h3>
                             <p class="players__role">Чемпион мира по шахматам</p>
@@ -264,7 +276,7 @@
                         </div>
                         <div class="players__card">
                             <div class="players__photo">
-                                <img src="./assets/images/webp/participants.webp" alt="Арон Нимцович">
+                                <img src="./assets/images/webp/participants.webp" loading="lazy" alt="Арон Нимцович">
                             </div>
                             <h3 class="players__name">Арон Нимцович</h3>
                             <p class="players__role">Чемпион мира по шахматам</p>
@@ -272,7 +284,7 @@
                         </div>
                         <div class="players__card">
                             <div class="players__photo">
-                                <img src="./assets/images/webp/participants.webp" alt="Рихард Рети">
+                                <img src="./assets/images/webp/participants.webp" loading="lazy" alt="Рихард Рети">
                             </div>
                             <h3 class="players__name">Рихард Рети</h3>
                             <p class="players__role">Чемпион мира по шахматам</p>
@@ -280,7 +292,7 @@
                         </div>
                         <div class="players__card">
                             <div class="players__photo">
-                                <img src="./assets/images/webp/participants.webp" alt="Остап Бендер">
+                                <img src="./assets/images/webp/participants.webp" loading="lazy" alt="Остап Бендер">
                             </div>
                             <h3 class="players__name">Остап Бендер</h3>
                             <p class="players__role">Гроссмейстер</p>
@@ -311,7 +323,7 @@
 
     <footer class="footer">
         <div class="container">
-            <p class="footer__disclaimer">Все персонажи, события и цитаты являются вымышленными и не принадлежат создателям сайта. С подробностями можно познакомиться в главе XXXIV романа Ильи Ильфа и Евгения Петрова «Двенадцать стульев».</p>
+            <p class="footer__disclaimer">Все персонажи, события и цитаты являются вымышленными <br class="break--mobile">и не принадлежат создателям сайта. <br class="break--mobile">С подробностями можно познакомиться <br class="break--mobile">в главе XXXIV романа Ильи Ильфа <br class="break--mobile">и Евгения Петрова «Двенадцать стульев».</p>
         </div>
     </footer>
 
