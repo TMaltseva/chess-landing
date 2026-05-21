@@ -880,6 +880,14 @@ ul, ol {
       transform: none;
     }
   }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    .about__title,
+    .about__subtitle,
+    .about__extra-heading {
+      font-size: 24px;
+    }
+  }
   .tournament {
     background-color: var(--white-background);
     padding: 0 20px 120px 20px;
@@ -1193,6 +1201,12 @@ ul, ol {
       width: 474px;
       max-width: 474px;
       height: 527px;
+    }
+  }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    .tournament__title {
+      font-size: 24px;
     }
   }
 .steps {
@@ -1573,6 +1587,12 @@ ul, ol {
     }
 }
 
+  @media (orientation: landscape) and (max-height: 500px) {
+    .steps__title {
+      font-size: 24px;
+    }
+  }
+
 .players {
     background-color: var(--white-background);
     padding: 60px 0 0;
@@ -1832,6 +1852,12 @@ ul, ol {
         display: block;
     }
 }
+
+  @media (orientation: landscape) and (max-height: 500px) {
+    .players__title {
+      font-size: 24px;
+    }
+  }
 
 .fade-up {
   opacity: 0;
