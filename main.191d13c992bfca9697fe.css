@@ -614,6 +614,10 @@ ul, ol {
       padding: 0 36px;
     }
 
+    .hero > .ticker {
+      margin: 0 -36px;
+    }
+
     .hero__background {
       background-position: 65% 60%;
     }
@@ -623,6 +627,10 @@ ul, ol {
     .hero {
       min-height: calc(100vh - 124px);
       padding: 0 72px;
+    }
+
+    .hero > .ticker {
+      margin: 0 -72px;
     }
 
     .hero .container {
