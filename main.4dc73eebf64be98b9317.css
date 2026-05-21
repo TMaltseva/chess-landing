@@ -104,6 +104,12 @@ ul, ol {
   list-style: none;
 }
 
+@media (max-width: 359px) {
+  html {
+    overflow-x: scroll;
+  }
+}
+
 
 .container {
     width: 100%;
