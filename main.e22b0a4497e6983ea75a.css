@@ -464,7 +464,6 @@ ul, ol {
     flex: 1;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     max-width: 335px;
   }
 
