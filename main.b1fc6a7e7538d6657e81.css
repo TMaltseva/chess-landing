@@ -1190,6 +1190,12 @@ ul, ol {
     }
   }
 
+  @media (min-width: 900px) and (max-width: 1199px) {
+    .tournament__details::before {
+      left: 50%;
+    }
+  }
+
   @media (min-width: 1366px) {
     .tournament {
       padding: 0 72px 200px 72px;
