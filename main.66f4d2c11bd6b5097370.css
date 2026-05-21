@@ -652,6 +652,24 @@ ul, ol {
       }
   }
 
+  @media (orientation: landscape) and (max-height: 500px) {
+    .hero__title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .hero__subtitle {
+      font-size: 14px;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero__buttons {
+      flex-direction: row;
+      gap: 12px;
+    }
+  }
+
   .about {
     background-color: var(--white-background);
     padding: 0 20px;
